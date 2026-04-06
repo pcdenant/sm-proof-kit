@@ -1,0 +1,544 @@
+================================================================================
+CODE EXTRACTION FROM GITHUB REPOSITORIES - COMPLETION REPORT
+================================================================================
+
+Project: sm-proof-kit
+Date: April 6, 2026
+Status: COMPLETE
+
+================================================================================
+TASK COMPLETION SUMMARY
+================================================================================
+
+TASK 1: Extract from impediment-value-calculator
+Repository: https://github.com/pcdenant/impediment-value-calculator
+Status: COMPLETE
+
+Extracted Components:
+  ✓ Unit conversion system (minutes, hours, days, weeks, months)
+  ✓ Cost calculation formulas (blocking cost and avoided cost)
+  ✓ Narrative generation logic (long and short form)
+  ✓ Copy-to-clipboard implementation (modern + fallback)
+  ✓ Currency configuration (EUR, CAD)
+
+Files Created:
+  - EXTRACTED_CODE_TASK1_IMPEDIMENT_CALCULATOR.md (complete code + docs)
+
+Code Ready for Integration into:
+  - js/utils/units.js (enhance existing implementation)
+
+Key Formulas Extracted:
+  - Blocking Cost = persons × hours × hourly_rate
+  - Avoided Cost = persons × additional_hours × hourly_rate
+
+
+TASK 2: Extract from Continuous-Improvement-Calculator
+Repository: https://github.com/pcdenant/Continuous-Improvement-Calculator
+Status: COMPLETE
+
+Extracted Components:
+  ✓ Dark theme CSS with custom variables
+  ✓ localStorage persistence system
+  ✓ URL parameter handling for scenario sharing
+  ✓ Copy-to-clipboard utility (modern Clipboard API + fallback)
+  ✓ Toast notification system
+  ✓ Responsive design (mobile/tablet/desktop)
+
+Files Created:
+  - EXTRACTED_CODE_TASK2_CI_CALCULATOR.md (complete code + docs)
+  - css_styles_complete.css (ready-to-copy reference)
+
+Code Ready for Integration into:
+  - css/styles.css (new file to create)
+  - js/utils/persistence.js (new file to create)
+  - js/utils/clipboard.js (new file to create)
+
+Key Formulas Extracted:
+  - Time-to-Market: -(Lead Time Change) × Daily Cost × Throughput × Months
+  - Productivity: -(Cost per Item Change) × Throughput × Months
+  - Efficiency: -(WIP Change) × Cost per Item × Months
+  - Quality: -(Defects Change) × Cost per Item × Months
+
+================================================================================
+DOCUMENTATION CREATED
+================================================================================
+
+Main Documentation Files:
+
+1. README_EXTRACTED_CODE.md (9.3K)
+   - Quick start guide for all extractions
+   - Overview of both tasks
+   - Key formulas and conversions
+   - Integration paths (A, B, or C)
+   - Browser support matrix
+   - File structure after integration
+   
+2. IMPLEMENTATION_GUIDE.md (18K)
+   - Detailed step-by-step implementation instructions
+   - Task 1 implementation (units and costs)
+   - Task 2 implementation (CSS, persistence, clipboard)
+   - HTML structure examples
+   - Data flow diagrams
+   - Customization guide
+   - Troubleshooting guide
+   - Performance optimization tips
+   - Browser compatibility matrix
+
+3. CODE_EXTRACTION_SUMMARY.md
+   - Quick index of extracted components
+   - Time conversion rates (minutes ↔ hours ↔ months)
+   - Cost calculation formulas
+   - CSS theme variables
+   - Data persistence behavior
+   - File locations and dependencies
+   - Integration checklist
+
+4. EXTRACTED_CODE_TASK1_IMPEDIMENT_CALCULATOR.md
+   - UNITES array (unit definitions)
+   - Unit conversion functions (getDef, fmtDuree, fmt)
+   - Complete calculation logic (update function)
+   - Cost formula explanations
+   - Narrative generation (long and short form)
+   - Copy-to-clipboard implementation
+   - Currency definitions
+   - Integration instructions
+
+5. EXTRACTED_CODE_TASK2_CI_CALCULATOR.md
+   - Dark theme CSS (450+ lines)
+   - Persistence module (getAllValues, setAllValues, localStorage, URL)
+   - Clipboard module (copyToClipboard, fallback, toast)
+   - Integration examples
+   - Usage patterns
+   - Browser compatibility table
+
+6. css_styles_complete.css
+   - Complete dark theme CSS ready to copy
+   - CSS custom variables for theming
+   - Input field styling
+   - Summary item styling
+   - Toast notification styles
+   - Responsive design (mobile/tablet/desktop)
+   - Print styles
+   - Scrollbar styling
+
+7. EXTRACTION_FILES_MANIFEST.txt
+   - Comprehensive manifest of all extracted files
+   - Features summary
+   - Dependencies list
+   - Quick reference formulas
+   - File creation guide
+   - Support resources
+
+8. EXTRACTION_COMPLETE.txt (this file)
+   - Final completion report
+   - What was extracted
+   - Documentation index
+   - Time unit conversions
+   - CSS color palette
+   - Storage specifications
+   - Next steps
+
+================================================================================
+KEY EXTRACTIONS
+================================================================================
+
+TIME CONVERSIONS (Used in both calculators):
+- 1 minute = 1/60 hour = 0.0167 hours
+- 1 hour = 1 hour
+- 1 day = 8 hours (standard work day)
+- 1 week = 40 hours (5 days × 8 hours)
+- 1 month = 160 hours (4 weeks × 40 hours)
+
+CSS THEME COLORS (Task 2):
+- --bg: #0a0e14 (main background - dark navy)
+- --surface: #1a1f29 (card background)
+- --border: #2d3340 (borders)
+- --text-primary: #e6e8eb (main text - light)
+- --text-secondary: #8b92a0 (secondary text - muted)
+- --accent: #00d4aa (primary accent - teal)
+- --accent-dim: #00aa88 (dimmed accent)
+- --danger: #ff6b6b (errors - red)
+- --warning: #ffd93d (warnings - yellow)
+- --success: #6bcf7f (success - green)
+
+DATA STORAGE (Task 2):
+- Storage Type: Browser localStorage
+- Storage Key: "ci-calculator-data"
+- Format: JSON stringified object
+- Auto-save: On every input change
+- Load Priority: URL params > localStorage > defaults
+- Capacity: ~10MB per domain
+
+CLIPBOARD IMPLEMENTATION (Both tasks):
+- Primary: navigator.clipboard.writeText() (modern)
+- Fallback: document.execCommand('copy') (older browsers)
+- Support: All modern browsers + IE11+
+
+================================================================================
+INTEGRATION TARGETS
+================================================================================
+
+After extracting code, create/update these files:
+
+NEW FILES TO CREATE:
+- css/styles.css
+  Source: Copy from css_styles_complete.css
+  Size: ~450 lines
+  Purpose: Dark theme styling for entire application
+
+- js/utils/persistence.js
+  Source: From EXTRACTED_CODE_TASK2_CI_CALCULATOR.md
+  Size: ~200 lines
+  Purpose: Handle localStorage auto-save and URL param loading
+
+- js/utils/clipboard.js
+  Source: From EXTRACTED_CODE_TASK2_CI_CALCULATOR.md
+  Size: ~150 lines
+  Purpose: Copy to clipboard with modern + fallback support
+
+FILES TO ENHANCE:
+- js/utils/units.js
+  Current: Already exists in project
+  Reference: EXTRACTED_CODE_TASK1_IMPEDIMENT_CALCULATOR.md
+  Purpose: Add cost calculation and narrative generation
+
+FILES TO UPDATE:
+- index.html (main file)
+  Add: <div id="toast"></div> for notifications
+  Add: Google Fonts link for typography
+  Add: Link to new css/styles.css
+  Add: Script imports for new JS modules
+  Update: Form structure with proper input IDs
+
+================================================================================
+BROWSER COMPATIBILITY
+================================================================================
+
+Minimum Support (basic functionality):
+- Chrome 49+
+- Firefox 31+
+- Safari 9+
+- Edge 15+
+- IE 11 (limited CSS Grid support)
+
+Full Feature Support (Clipboard API):
+- Chrome 63+
+- Firefox 53+
+- Safari 13.1+
+- Edge 79+
+
+Fallback Strategy:
+- Clipboard API → execCommand (for older browsers)
+- CSS Grid → Flexbox (for IE 11)
+- CSS Variables → Inline values (for IE 11)
+
+================================================================================
+FEATURE SUMMARY
+================================================================================
+
+TASK 1 Features:
+✓ Unit conversion (5 time units)
+✓ Cost calculations
+✓ Narrative generation
+✓ Copy functionality
+✓ Currency support
+✓ Locale formatting
+
+TASK 2 Features:
+✓ Dark theme CSS
+✓ Auto-save to localStorage
+✓ URL parameter sharing
+✓ Copy-to-clipboard
+✓ Toast notifications
+✓ Responsive design
+✓ Print styles
+
+COMBINED Features:
+✓ Time-based cost calculations
+✓ Persistent data storage
+✓ Shareable scenarios
+✓ Modern UI with dark theme
+✓ Cross-browser compatible
+✓ No external dependencies
+
+================================================================================
+INTEGRATION PATHS
+================================================================================
+
+Choose one of three integration paths:
+
+PATH A: Complete Integration (Both Tasks)
+Timeline: 2-3 hours
+Steps:
+  1. Create css/styles.css
+  2. Create js/utils/persistence.js
+  3. Create js/utils/clipboard.js
+  4. Enhance js/utils/units.js with Task 1 formulas
+  5. Update HTML structure
+  6. Wire up event listeners
+  7. Test all features
+
+PATH B: UI & Persistence Only (Task 2)
+Timeline: 1-1.5 hours
+Steps:
+  1. Create css/styles.css
+  2. Create js/utils/persistence.js
+  3. Create js/utils/clipboard.js
+  4. Update HTML structure
+  5. Test persistence and clipboard
+
+PATH C: Calculations Only (Task 1)
+Timeline: 30-45 minutes
+Steps:
+  1. Review existing js/utils/units.js
+  2. Add cost calculation functions
+  3. Add narrative generation
+  4. Test calculations
+
+================================================================================
+DEPENDENCIES & REQUIREMENTS
+================================================================================
+
+Task 1 Dependencies:
+- None (pure JavaScript ES5)
+- No external libraries
+- No API calls
+- Works offline
+
+Task 2 Dependencies:
+- Google Fonts (CSS link provided)
+- No JavaScript frameworks
+- No npm packages
+- Browser localStorage support
+
+Fonts Required (Task 2):
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+HTML Elements Required (Task 2):
+<div id="toast"></div> (for notifications)
+
+Permissions Required:
+- localStorage access
+- Clipboard access (user must grant)
+- DOM manipulation
+
+================================================================================
+QUICK START INSTRUCTIONS
+================================================================================
+
+1. START HERE:
+   Read: README_EXTRACTED_CODE.md (5-10 minutes)
+   This gives you the overview and integration paths.
+
+2. CHOOSE YOUR PATH:
+   - Path A: Full integration (both tasks)
+   - Path B: UI only (Task 2)
+   - Path C: Calculations only (Task 1)
+
+3. IMPLEMENT:
+   Read: IMPLEMENTATION_GUIDE.md (30 minutes for your path)
+   Follow step-by-step instructions for your chosen path.
+
+4. REFERENCE DURING IMPLEMENTATION:
+   - Task 1 docs: EXTRACTED_CODE_TASK1_IMPEDIMENT_CALCULATOR.md
+   - Task 2 docs: EXTRACTED_CODE_TASK2_CI_CALCULATOR.md
+   - CSS reference: css_styles_complete.css
+
+5. TEST:
+   Follow testing section in IMPLEMENTATION_GUIDE.md
+   Test across multiple browsers
+
+6. CUSTOMIZE (Optional):
+   Adjust colors, language, default values as needed
+   See customization guide in IMPLEMENTATION_GUIDE.md
+
+================================================================================
+KEY FORMULAS REFERENCE
+================================================================================
+
+Unit Conversion (Task 1):
+  hoursValue = minutes / 60
+  hoursValue = hours * 1
+  hoursValue = days * 8
+  hoursValue = weeks * 40
+  hoursValue = months * 160
+
+Cost Calculations (Task 1):
+  blockingCost = persons × hoursValue × hourlyRate
+  avoidedCost = persons × avoidedHours × hourlyRate
+
+Impact Calculations (Task 2):
+  timeToMarketImpact = -(leadTimeChange) × dailyCost × throughput × months
+  productivityImpact = -(costPerItemChange) × throughput × months
+  efficiencyImpact = -(wipChange) × costPerItem × months
+  qualityImpact = -(defectsChange) × costPerItem × months
+
+Data Persistence (Task 2):
+  save: localStorage.setItem('key', JSON.stringify(data))
+  load: JSON.parse(localStorage.getItem('key'))
+  share: window.location.origin + '?' + new URLSearchParams(data)
+
+Clipboard (Task 2):
+  modern: navigator.clipboard.writeText(text)
+  fallback: document.execCommand('copy')
+
+================================================================================
+FILE SIZE SUMMARY
+================================================================================
+
+Documentation Files Created:
+- README_EXTRACTED_CODE.md: 9.3K
+- IMPLEMENTATION_GUIDE.md: 18K
+- CODE_EXTRACTION_SUMMARY.md: ~15K
+- EXTRACTED_CODE_TASK1_IMPEDIMENT_CALCULATOR.md: ~20K
+- EXTRACTED_CODE_TASK2_CI_CALCULATOR.md: ~25K
+- css_styles_complete.css: ~15K
+- EXTRACTION_FILES_MANIFEST.txt: ~10K
+- EXTRACTION_COMPLETE.txt: This file (~15K)
+
+Total Documentation: ~127K
+Ready for implementation: YES
+
+Code to Implement:
+- css/styles.css: ~450 lines
+- js/utils/persistence.js: ~200 lines
+- js/utils/clipboard.js: ~150 lines
+- js/utils/units.js: Enhance existing (~100 lines)
+
+Total Code: ~900 lines (all provided in documentation)
+
+================================================================================
+SUPPORT & TROUBLESHOOTING
+================================================================================
+
+For Implementation Help:
+1. See IMPLEMENTATION_GUIDE.md troubleshooting section
+2. Review task-specific documentation
+3. Check original repositories for context:
+   - https://github.com/pcdenant/impediment-value-calculator
+   - https://github.com/pcdenant/Continuous-Improvement-Calculator
+
+Common Issues:
+✓ localStorage not working → Check browser privacy mode
+✓ Clipboard copy fails → Check HTTPS requirement (localhost OK)
+✓ CSS not loading → Check path and Google Fonts link
+✓ Toast not showing → Check #toast element exists
+✓ URL params not loading → Check field IDs match parameter names
+
+Reference Documentation:
+- MDN CSS Variables: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+- MDN Clipboard API: https://developer.mozilla.org/en-US/docs/Web/API/Clipboard
+- MDN localStorage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- MDN URLSearchParams: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+
+================================================================================
+COMPLETION CHECKLIST
+================================================================================
+
+Extraction Phase (COMPLETE):
+  ✓ Extracted unit conversion system from Task 1
+  ✓ Extracted cost calculation formulas from Task 1
+  ✓ Extracted narrative generation from Task 1
+  ✓ Extracted CSS theme from Task 2
+  ✓ Extracted localStorage persistence from Task 2
+  ✓ Extracted URL parameter handling from Task 2
+  ✓ Extracted clipboard utilities from Task 2
+
+Documentation Phase (COMPLETE):
+  ✓ Created README_EXTRACTED_CODE.md
+  ✓ Created IMPLEMENTATION_GUIDE.md
+  ✓ Created CODE_EXTRACTION_SUMMARY.md
+  ✓ Created EXTRACTED_CODE_TASK1_IMPEDIMENT_CALCULATOR.md
+  ✓ Created EXTRACTED_CODE_TASK2_CI_CALCULATOR.md
+  ✓ Created css_styles_complete.css reference
+  ✓ Created EXTRACTION_FILES_MANIFEST.txt
+  ✓ Created EXTRACTION_COMPLETE.txt
+
+Integration Phase (PENDING - Your responsibility):
+  □ Create css/styles.css
+  □ Create js/utils/persistence.js
+  □ Create js/utils/clipboard.js
+  □ Enhance js/utils/units.js
+  □ Update index.html
+  □ Test all features
+  □ Customize as needed
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Read README_EXTRACTED_CODE.md (5-10 min)
+   - Understand what was extracted
+   - Choose your integration path
+
+2. Read IMPLEMENTATION_GUIDE.md (20-30 min)
+   - Follow step-by-step instructions
+   - Choose between Path A, B, or C
+
+3. Implement according to your chosen path (1-3 hours)
+   - Create required files
+   - Copy code from documentation
+   - Wire up event listeners
+
+4. Test your implementation
+   - Use test checklist from IMPLEMENTATION_GUIDE.md
+   - Test across multiple browsers
+   - Verify all features work
+
+5. Customize (optional, 30 min)
+   - Adjust colors using CSS variables
+   - Localize language strings
+   - Change default values
+
+6. Deploy and monitor
+   - Test on production domain
+   - Monitor browser console
+   - Verify localStorage works
+
+================================================================================
+PROJECT STATUS
+================================================================================
+
+Code Extraction: COMPLETE ✓
+Documentation: COMPLETE ✓
+Code Organization: READY ✓
+Integration Instructions: PROVIDED ✓
+Browser Testing Matrix: PROVIDED ✓
+Troubleshooting Guide: PROVIDED ✓
+
+Ready for Integration: YES
+
+Expected Integration Time: 1.5 - 3 hours
+Expected Testing Time: 30 minutes - 1 hour
+Expected Customization Time: 15 - 45 minutes
+
+Total Project Time: 2 - 4.5 hours
+
+================================================================================
+CONTACT & REFERENCES
+================================================================================
+
+Source Repositories:
+- Impediment Calculator: https://github.com/pcdenant/impediment-value-calculator
+- CI Calculator: https://github.com/pcdenant/Continuous-Improvement-Calculator
+
+Documentation:
+- Mozilla Developer Network: https://developer.mozilla.org/
+- CSS Variables Guide: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+- Web APIs: https://developer.mozilla.org/en-US/docs/Web/API
+
+Extraction Date: April 6, 2026
+Extraction Status: COMPLETE
+All Documentation Provided: YES
+
+================================================================================
+END OF COMPLETION REPORT
+================================================================================
+
+All code has been extracted, documented, and is ready for integration into 
+the sm-proof-kit project. Comprehensive step-by-step integration instructions 
+are provided in IMPLEMENTATION_GUIDE.md.
+
+Total estimated integration time: 1.5 - 3 hours depending on chosen path.
+
+Start with README_EXTRACTED_CODE.md for an overview.

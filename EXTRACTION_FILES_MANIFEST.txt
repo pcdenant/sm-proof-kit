@@ -1,0 +1,306 @@
+EXTRACTED CODE FILES MANIFEST
+=============================
+Created: April 6, 2026
+Status: Complete
+
+DOCUMENTATION FILES CREATED:
+============================
+
+1. README_EXTRACTED_CODE.md (9.3K)
+   - Quick start guide
+   - File index
+   - Overview of both tasks
+   - Key formulas and conversions
+   - Integration paths
+   - Browser support
+
+2. IMPLEMENTATION_GUIDE.md (18K)
+   - Detailed step-by-step implementation
+   - Task 1 implementation steps
+   - Task 2 implementation steps (CSS, persistence, clipboard)
+   - HTML structure examples
+   - Data flow diagrams
+   - Customization guide
+   - Troubleshooting troubleshooting
+   - Browser compatibility matrix
+   - Performance optimization tips
+
+3. CODE_EXTRACTION_SUMMARY.md
+   - Quick index of extracted components
+   - Conversion rates and formulas
+   - CSS theme variables
+   - Data persistence behavior
+   - File locations
+   - Dependencies
+   - Integration checklist
+
+4. EXTRACTED_CODE_TASK1_IMPEDIMENT_CALCULATOR.md
+   - Complete unit conversion system (UNITES array)
+   - Cost calculation formulas
+   - Narrative generation logic
+   - Copy-to-clipboard implementation
+   - Currency configuration
+   - Integration instructions
+
+5. EXTRACTED_CODE_TASK2_CI_CALCULATOR.md
+   - Complete dark theme CSS
+   - localStorage & URL parameter handling
+   - Copy-to-clipboard utility with fallback
+   - Integration examples
+   - Usage patterns
+   - Browser compatibility
+
+6. css_styles_complete.css (Reference copy)
+   - Ready-to-copy dark theme CSS
+   - CSS variables
+   - Responsive design
+   - Print styles
+   - Scrollbar styling
+
+
+EXTRACTION SUMMARY:
+===================
+
+TASK 1: impediment-value-calculator
+Source: https://github.com/pcdenant/impediment-value-calculator
+
+Extracted Components:
+- Unit conversion system (min, hours, days, weeks, months)
+- Cost calculation formulas (blocking & avoided)
+- Human-readable narrative generation
+- Copy-to-clipboard implementation
+- Currency support (EUR, CAD)
+
+Integration Target:
+- js/utils/units.js (enhance existing)
+
+Key Formulas:
+- Blocking Cost = persons × hours × rate
+- Avoided Cost = persons × additional_hours × rate
+
+
+TASK 2: Continuous-Improvement-Calculator
+Source: https://github.com/pcdenant/Continuous-Improvement-Calculator
+
+Extracted Components:
+- Dark theme CSS with custom variables
+- localStorage auto-persistence
+- URL parameter handling for sharing
+- Copy-to-clipboard utility (modern + fallback)
+- Toast notification system
+- Responsive design
+
+Integration Targets:
+- css/styles.css (new file to create)
+- js/utils/persistence.js (new file to create)
+- js/utils/clipboard.js (new file to create)
+
+Key Formulas:
+- Time-to-Market = -(Lead Time Change) × Daily Cost × Throughput × Months
+- Productivity = -(Cost per Item Change) × Throughput × Months
+- Efficiency = -(WIP Change) × Cost per Item × Months
+- Quality = -(Defects Change) × Cost per Item × Months
+
+
+TIME CONVERSION REFERENCE:
+==========================
+
+All units convert to hours:
+- 1 minute = 1/60 hour = 0.0167h
+- 1 hour = 1 hour
+- 1 day = 8 hours (standard work day)
+- 1 week = 40 hours (5 days × 8 hours)
+- 1 month = 160 hours (4 weeks × 40 hours)
+
+These are used as the standard conversions across both calculators.
+
+
+CSS THEME COLORS (Task 2):
+==========================
+
+--bg: #0a0e14                  (main background - dark navy)
+--surface: #1a1f29             (card background - slightly lighter)
+--border: #2d3340              (borders - muted dark)
+--text-primary: #e6e8eb        (main text - light)
+--text-secondary: #8b92a0      (secondary text - muted)
+--accent: #00d4aa              (primary accent - teal)
+--accent-dim: #00aa88          (dimmed accent - darker teal)
+--danger: #ff6b6b              (errors/negative - red)
+--warning: #ffd93d             (warnings - yellow)
+--success: #6bcf7f             (success/positive - green)
+
+
+DATA STORAGE (Task 2):
+======================
+
+localStorage:
+- Key: ci-calculator-data
+- Format: JSON stringified object
+- Auto-save: On every input change
+- Load priority: 2nd (after URL params)
+
+URL Parameters:
+- Format: Query string (?key=value&key2=value2)
+- Load priority: 1st (overrides localStorage)
+- Use case: Scenario sharing
+- Backend: Not required
+
+Load Priority:
+1. URL query parameters (if present)
+2. localStorage (if no URL params)
+3. Default values (fallback)
+
+
+HOW TO USE THESE FILES:
+=======================
+
+Step 1: Start Here
+   → Read: README_EXTRACTED_CODE.md (5-10 minutes)
+
+Step 2: Choose Your Path
+   Path A: Both tasks (2-3 hours)
+   Path B: Task 2 only - UI & persistence (1-1.5 hours)
+   Path C: Task 1 only - Calculations (30-45 minutes)
+
+Step 3: Implement
+   → Follow: IMPLEMENTATION_GUIDE.md (step-by-step)
+   → Reference: Task-specific docs as needed
+
+Step 4: Test
+   → Use the testing section from IMPLEMENTATION_GUIDE.md
+   → Browser test matrix provided
+
+
+KEY FEATURES EXTRACTED:
+=======================
+
+Task 1 - Impediment Calculator:
+✓ Unit conversion system (5 time units)
+✓ Cost calculation formulas
+✓ Narrative generation (long & short form)
+✓ Copy-to-clipboard (modern + fallback)
+✓ Currency switching (EUR/CAD)
+
+Task 2 - CI Calculator:
+✓ Dark theme CSS (modern, accessible)
+✓ Auto-save to localStorage
+✓ URL parameter loading
+✓ Shareable scenario links
+✓ Copy-to-clipboard utility
+✓ Toast notifications
+✓ Responsive design (mobile/tablet/desktop)
+✓ Print styles
+
+
+DEPENDENCIES:
+==============
+
+Task 1:
+- No external dependencies
+- Pure JavaScript (ES5)
+- Works in all modern browsers
+
+Task 2:
+- No external dependencies
+- Pure JavaScript (ES6+)
+- Requires Google Fonts (link provided)
+- localStorage support
+- Modern browsers (IE11+ for fallback)
+
+
+BROWSER SUPPORT:
+=================
+
+Minimum (basic functionality):
+- Chrome 49+
+- Firefox 31+
+- Safari 9+
+- Edge 15+
+- IE 11
+
+Full features (Clipboard API):
+- Chrome 63+
+- Firefox 53+
+- Safari 13.1+
+- Edge 79+
+
+Fallback support:
+- Older browsers fall back to execCommand
+- CSS Grid falls back to Flexbox in IE11
+
+
+FILES TO CREATE IN PROJECT:
+============================
+
+After integration:
+
+New CSS file:
+└── css/styles.css (copy from css_styles_complete.css)
+
+New JavaScript files:
+├── js/utils/persistence.js
+└── js/utils/clipboard.js
+
+Modified/enhanced:
+└── js/utils/units.js (reference Task 1 for enhancements)
+
+
+QUICK REFERENCE FORMULAS:
+==========================
+
+Unit Conversion:
+  hours = minutes / 60
+  hours = days * 8
+  hours = weeks * 40
+  hours = months * 160
+
+Cost Calculations (Task 1):
+  blockingCost = persons × durationHours × hourlyRate
+  avoidedCost = persons × additionalHours × hourlyRate
+
+Impact Calculations (Task 2):
+  timeToMarket = -(leadTimeChange) × dailyCost × throughput × months
+  productivity = -(costPerItemChange) × throughput × months
+  efficiency = -(wipChange) × costPerItem × months
+  quality = -(defectsChange) × costPerItem × months
+
+Data Storage:
+  Save: localStorage.setItem('key', JSON.stringify(data))
+  Load: JSON.parse(localStorage.getItem('key'))
+  Share: window.location.origin + window.location.pathname + '?' + params
+
+Clipboard:
+  Copy: navigator.clipboard.writeText(text) or document.execCommand('copy')
+
+
+NEXT STEPS:
+===========
+
+1. Read README_EXTRACTED_CODE.md (you are here)
+2. Read CODE_EXTRACTION_SUMMARY.md (5 min overview)
+3. Follow IMPLEMENTATION_GUIDE.md (step-by-step)
+4. Test each component
+5. Customize colors/language as needed
+
+Estimated Total Time: 1.5 - 3 hours
+
+
+SUPPORT:
+========
+
+For issues:
+1. Check IMPLEMENTATION_GUIDE.md troubleshooting section
+2. Review task-specific documentation
+3. Check original repositories:
+   - https://github.com/pcdenant/impediment-value-calculator
+   - https://github.com/pcdenant/Continuous-Improvement-Calculator
+
+For reference:
+- Mozilla Developer Network: https://developer.mozilla.org/
+- CSS Variables: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+- Clipboard API: https://developer.mozilla.org/en-US/docs/Web/API/Clipboard
+- localStorage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+
+MANIFEST CREATED: April 6, 2026
+All extractions complete and documented.
